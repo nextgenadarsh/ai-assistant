@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="2">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adarsh Kumar - Engineering Manager</title>
+    <style>
+        :root {
+            --text: #111;
+            --muted: #444;
+            --accent: #0645ad;
+            --rule: #111;
+        }
+
+        @page {
+            size: A4;
+            margin: 12mm;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.25;
+            margin: 0 auto;
+            max-width: 1100px;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        ul,
+        hr {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        h3 {
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        h4 {
+            font-size: 13px;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .toolbar {
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+        }
+
+        .toolbar button {
+            background: white;
+            border: 1px solid #777;
+            cursor: pointer;
+            padding: 5px 9px;
+        }
+
+        .toolbar button[aria-pressed="true"] {
+            background: #111;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            gap: 12px;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .identity {
+            border-left: 10px solid #d3d3d3;
+            padding-left: 10px;
+        }
+
+        .contact {
+            align-self: center;
+            text-align: right;
+        }
+
+        .section {
+            break-inside: avoid;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            border-bottom: 1.5px solid var(--rule);
+            margin-bottom: 4px;
+            padding-bottom: 2px;
+        }
+
+        .overview {
+            margin-bottom: 10px;
+        }
+
+        .content {
+            display: grid;
+            gap: 18px;
+        }
+
+        .primary-column {
+            grid-area: primary;
+        }
+
+        .secondary-column {
+            grid-area: secondary;
+        }
+
+        html[data-layout="1"] .content {
+            grid-template-areas:
+                "expertise"
+                "experience"
+                "certifications"
+                "education";
+            grid-template-columns: 1fr;
+        }
+
+        html[data-layout="1"] .primary-column,
+        html[data-layout="1"] .secondary-column {
+            display: contents;
+        }
+
+        html[data-layout="1"] .expertise-section {
+            grid-area: expertise;
+        }
+
+        html[data-layout="1"] .experience-section {
+            grid-area: experience;
+        }
+
+        html[data-layout="1"] .certifications-section {
+            grid-area: certifications;
+        }
+
+        html[data-layout="1"] .education-section {
+            grid-area: education;
+        }
+
+        html[data-layout="2"] .content {
+            grid-template-areas: "primary secondary";
+            grid-template-columns: minmax(0, 7fr) minmax(220px, 3fr);
+        }
+
+        .experience {
+            break-inside: avoid;
+            margin-bottom: 8px;
+        }
+
+        .industry {
+            color: var(--muted);
+        }
+
+        .work {
+            margin: 4px 0 0 -20px;
+            padding-left: 20px;
+        }
+
+        .work li {
+            margin-bottom: 3px;
+        }
+
+        .skill-group {
+            margin-bottom: 5px;
+        }
+
+        .skill-title {
+            font-weight: bold;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px 5px;
+            margin-top: 2px;
+        }
+
+        .skill {
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            padding: 2px 4px;
+        }
+
+        .certification {
+            border-bottom: .5px dashed #999;
+            padding: 3px 0;
+        }
+
+        .certification:last-child {
+            border-bottom: 0;
+        }
+
+        @media print {
+            body {
+                max-width: none;
+                padding: 0;
+            }
+
+            .overview {
+                break-inside: auto;
+                page-break-inside: auto;
+            }
+
+            html[data-layout="1"] .content {
+                display: block;
+            }
+
+            html[data-layout="1"] .section {
+                break-inside: auto;
+                page-break-inside: auto;
+            }
+
+            .toolbar {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 12px;
+            }
+
+            .header,
+            html[data-layout="2"] .content {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                display: block;
+            }
+
+            .contact {
+                margin-top: 8px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="toolbar" aria-label="Resume layout controls">
+        <button type="button" data-layout="1">1 column</button>
+        <button type="button" data-layout="2">2 columns</button>
+        <button type="button" onclick="window.print()">Print / PDF</button>
+    </nav>
+
+    <header class="header">
+        <div class="identity">
+            <h1>Adarsh Kumar</h1>
+            <h3>VP - Engineering Manager (Multi-Pod Delivery, Governance &amp; AI Enablement)</h3>
+        </div>
+        <div class="contact">
+            <div>+91-8500850627</div>
+            <div><a href="mailto:nextgen.adarsh@outlook.com">nextgen.adarsh@outlook.com</a></div>
+            <div><a href="https://www.linkedin.com/in/nextgenadarsh">linkedin.com/in/nextgenadarsh</a></div>
+            <div><a href="https://www.github.com/nextgenadarsh">github.com/nextgenadarsh</a></div>
+            <div>Pune, India</div>
+        </div>
+    </header>
+
+    <section class="section overview">
+        <h4>PROFESSIONAL OVERVIEW</h4>
+        <p>Engineering Manager / VP with 16+ years of experience leading cross-functional engineering teams across banking and enterprise infrastructure. Currently lead a 30+ person engineering organization across multiple pods, including Managers, Tech Leads, software engineers, and vendor contractors. Experienced in cross-functional delivery, vendor and SLA management, architecture governance, risk and controls alignment, cloud operations, and AI-assisted engineering practices. Improved engineering velocity by 30%, reduced migration effort by 40%, and reduced cloud operational costs by 20%.</p>
+    </section>
+
+    <main class="content">
+        <div class="primary-column">
+            <section class="section experience-section">
+                <h4 class="section-title">PROFESSIONAL EXPERIENCE</h4>
+                <article class="experience">
+                    <h4>VP - Engineering Manager | JPMorgan India Services (Feb 2022 to Present)</h4>
+                    <div class="industry">Industry: Loyalty &amp; Engagement (Banking)</div>
+                    <ul class="work">
+                        <li>Led a 30+ person engineering organization across multiple pods, managing Managers, Tech Leads, software engineers, and vendor contractors; coordinated vendor SOWs, contractor onboarding, and SLAs to support predictable execution.</li>
+                        <li>Partnered with senior business, product, and technology stakeholders to align priorities, resolve delivery trade-offs, and communicate progress, risks, and dependencies across engineering pods.</li>
+                        <li>Coached and mentored Managers, Tech Leads, and engineers through architecture reviews, delivery challenges, AI-assisted engineering practices, and technical career development.</li>
+                        <li>Set direction for team-level test strategy and engineering quality, including unit-test adoption, code review practices, CI/CD quality controls, secure coding, and threat-modeling reviews.</li>
+                        <li>Led cross-functional teams through a cloud platform migration by establishing the governance model, delivery process, team structure, and migration strategy; removed delivery blockers and accelerated execution without disrupting live traffic.</li>
+                        <li>Proposed and drove adoption of TrueCD, a continuous delivery and deployment process that protected migration quality by requiring repository-level contract, acceptance, and end-to-end tests, alongside remediation of SonarQube findings.</li>
+                        <li>Led the adoption of multi-Availability Zone deployment as a mandatory engineering standard across teams, strengthening platform resiliency and reducing single points of failure.</li>
+                        <li>Aligned senior product leadership and stakeholders on critical-priority feature delivery during the migration, enabling engineering teams to focus capacity on migration execution while maintaining essential business commitments.</li>
+                        <li>Drove AI-assisted engineering adoption across 30+ engineers, including code generation, unit-test creation, impact analysis, and documentation; improved engineering velocity by 30% while supporting more predictable delivery.</li>
+                        <li>Partnered with Information Security, Compliance, and Audit teams to align deployment pipelines with enterprise risk controls, vulnerability management requirements, and regulatory compliance practices.</li>
+                        <li>Led technology center-wide architecture review boards, promoting reusable microservice capabilities and reducing legacy platform migration efforts by 80% (saving 500+ person-days).</li>
+                    </ul>
+                </article>
+                <article class="experience">
+                    <h4>Associate - Team Lead | JPMorgan India Services (July 2016 to Jan 2022)</h4>
+                    <div class="industry">Industry: Infrastructure Management (Finance)</div>
+                    <ul class="work">
+                        <li>Designed and delivered a fault-tolerant, self-service VM orchestration platform using distributed caching (Redis) and REST APIs for 317,000+ internal users; coordinated technical delivery across platform and compliance capabilities while eliminating single points of failure.</li>
+                        <li>Implemented enterprise asset management microservices integrating with cyber-security compliance systems, reducing application provisioning time.</li>
+                    </ul>
+                </article>
+                <article class="experience">
+                    <h4>Senior Software Engineer | NISC Export Services (Aug 2014 to June 2016)</h4>
+                    <div class="industry">Industry: E Publishing</div>
+                    <ul class="work"><li>Architected a high-performance ReactJS web application with a micro-frontend design, enabling reusable plug-and-play UI components, driving developer efficiency, and designed an alert system to boost customer engagement and revenue.</li></ul>
+                </article>
+                <article class="experience">
+                    <h4>Software Developer | Tavisca Solutions (Mar 2013 to Aug 2014)</h4>
+                    <div class="industry">Industry: Travel</div>
+                    <ul class="work"><li>Developed high-performance systems, including a multi-threaded hotel content downloader (10x faster), a payment module with seamless gateway integration, and a re-engineered user profile system for 50K+ users using caching strategies to improve scalability and user experience.</li></ul>
+                </article>
+                <article class="experience">
+                    <h4>Software Engineer | Harbinger Systems (Jan 2010 to Mar 2013)</h4>
+                    <div class="industry">Industry: Human Capital Management - HCM</div>
+                    <ul class="work"><li>Built core application UI modules and optimized backend user-group processing algorithms, reducing execution runtime by 66% (12h to 4h).</li></ul>
+                </article>
+            </section>
+
+            <section class="section certifications-section">
+                <h4 class="section-title">CERTIFICATIONS &amp; HONORS</h4>
+                <div class="certification"><span class="skill-title">Agile &amp; Leadership:</span> Certified Kanban System Design | Kanban Management Professional | NASBA Certified Critical Thinking Strategies For Better Decisions</div>
+                <div class="certification"><span class="skill-title">Cloud, Data &amp; Architecture:</span> AWS Certified Solutions Architect | AWS Certified Data Engineer | AWS SME | CKAD | Azure Fundamentals | Apache Cassandra and DataStax Enterprise - DataStax Academy</div>
+                <div class="certification"><span class="skill-title">Security:</span> JPMorgan Certified Threat Modeling Application Security Champion</div>
+                <div class="certification"><span class="skill-title">Recognition:</span> JPMorgan Certificate of Excellence | Internal Technology Subject Matter Expert (SME)</div>
+            </section>
+        </div>
+
+        <aside class="secondary-column">
+            <section class="section expertise-section">
+                <h4 class="section-title">CORE COMPETENCIES</h4>
+                <div class="skill-group"><div class="skill-title">Engineering Delivery &amp; Governance</div><div class="skill-list"><span class="skill">Cross-Functional Delivery</span><span class="skill">Agile Delivery &amp; Continuous Improvement</span><span class="skill">Vendor SOWs &amp; SLAs</span><span class="skill">Architecture Review Boards</span><span class="skill">Risk &amp; Controls Governance</span><span class="skill">Delivery Predictability</span><span class="skill">Platform Reuse</span></div></div>
+                <div class="skill-group"><div class="skill-title">People &amp; Stakeholder Leadership</div><div class="skill-list"><span class="skill">People Leadership</span><span class="skill">Manager Coordination</span><span class="skill">Tech Lead Coordination</span><span class="skill">Cross-Functional Teams</span><span class="skill">Stakeholder Alignment</span><span class="skill">Vendor Management</span><span class="skill">Talent Development</span></div></div>
+                <div class="skill-group"><div class="skill-title">Quality &amp; Secure Engineering</div><div class="skill-list"><span class="skill">AI-Assisted Unit Test Creation</span><span class="skill">Code Reviews</span><span class="skill">Threat Modeling</span><span class="skill">CI/CD Controls</span><span class="skill">Secure Engineering</span><span class="skill">Vulnerability Management</span></div></div>
+                <div class="skill-group"><div class="skill-title">Technical Strategy &amp; Platforms</div><div class="skill-list"><span class="skill">Microservices Architecture</span><span class="skill">API-Led Design</span><span class="skill">Apache Kafka</span><span class="skill">Event-Driven Architecture</span><span class="skill">High Availability</span><span class="skill">AWS</span><span class="skill">Kubernetes</span><span class="skill">Terraform/IaC</span><span class="skill">CI/CD</span><span class="skill">SRE &amp; Observability</span></div></div>
+                <div class="skill-group"><div class="skill-title">Languages &amp; AI-Assisted Engineering</div><div class="skill-list"><span class="skill">Java</span><span class="skill">C# / .NET Core</span><span class="skill">Python</span><span class="skill">TypeScript</span><span class="skill">ReactJS / Angular</span><span class="skill">GitHub Copilot</span><span class="skill">Anthropic Claude</span><span class="skill">LangGraph / Semantic Kernel</span><span class="skill">AI-Assisted Testing &amp; Impact Analysis</span></div></div>
+            </section>
+
+            <section class="section education-section">
+                <h4 class="section-title">EDUCATION</h4>
+                <div class="experience"><span class="skill-title">Master of Computer Application (MCA)</span><br>Sinhgad Institute of Management (SIOM), University of Pune</div>
+                <div class="experience"><span class="skill-title">Bachelor of Science (Honours) in Computer Science</span><br>B. R. A. Bihar University</div>
+            </section>
+        </aside>
+    </main>
+
+    <script>
+        const documentRoot = document.documentElement;
+        const layoutButtons = document.querySelectorAll('[data-layout]');
+        const requestedLayout = new URLSearchParams(window.location.search).get('layout');
+        const initialLayout = requestedLayout === '1' ? '1' : '2';
+
+        function setLayout(layout) {
+            documentRoot.dataset.layout = layout;
+            layoutButtons.forEach((button) => {
+                if (button.tagName === 'BUTTON') {
+                    button.setAttribute('aria-pressed', button.dataset.layout === layout);
+                }
+            });
+            const url = new URL(window.location.href);
+            url.searchParams.set('layout', layout);
+            window.history.replaceState({}, '', url);
+        }
+
+        layoutButtons.forEach((button) => {
+            if (button.tagName === 'BUTTON' && button.dataset.layout) {
+                button.addEventListener('click', () => setLayout(button.dataset.layout));
+            }
+        });
+
+        setLayout(initialLayout);
+    </script>
+</body>
+
+</html>

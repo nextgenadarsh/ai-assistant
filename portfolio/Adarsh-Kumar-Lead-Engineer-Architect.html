@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="2">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adarsh Kumar - Lead Cloud Solution Architect</title>
+    <style>
+        :root {
+            --text: #111;
+            --muted: #444;
+            --accent: #0645ad;
+            --rule: #111;
+        }
+
+        @page {
+            size: A4;
+            margin: 12mm;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.25;
+            margin: 0 auto;
+            max-width: 1100px;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        p,
+        ul,
+        hr {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        h3 {
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        h4 {
+            font-size: 13px;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .toolbar {
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+        }
+
+        .toolbar button {
+            background: white;
+            border: 1px solid #777;
+            cursor: pointer;
+            padding: 5px 9px;
+        }
+
+        .toolbar button[aria-pressed="true"] {
+            background: #111;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            gap: 12px;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .identity {
+            border-left: 10px solid #d3d3d3;
+            padding-left: 10px;
+        }
+
+        .contact {
+            align-self: center;
+            text-align: right;
+        }
+
+        .section {
+            break-inside: avoid;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            border-bottom: 1.5px solid var(--rule);
+            margin-bottom: 4px;
+            padding-bottom: 2px;
+        }
+
+        .overview {
+            margin-bottom: 10px;
+        }
+
+        .content {
+            display: grid;
+            gap: 18px;
+        }
+
+        .primary-column {
+            grid-area: primary;
+        }
+
+        .secondary-column {
+            grid-area: secondary;
+        }
+
+        html[data-layout="1"] .content {
+            grid-template-areas:
+                "expertise"
+                "experience"
+                "certifications"
+                "education";
+            grid-template-columns: 1fr;
+        }
+
+        html[data-layout="1"] .primary-column,
+        html[data-layout="1"] .secondary-column {
+            display: contents;
+        }
+
+        html[data-layout="1"] .expertise-section {
+            grid-area: expertise;
+        }
+
+        html[data-layout="1"] .experience-section {
+            grid-area: experience;
+        }
+
+        html[data-layout="1"] .certifications-section {
+            grid-area: certifications;
+        }
+
+        html[data-layout="1"] .education-section {
+            grid-area: education;
+        }
+
+        html[data-layout="2"] .content {
+            grid-template-areas: "primary secondary";
+            grid-template-columns: minmax(0, 7fr) minmax(220px, 3fr);
+        }
+
+        .experience {
+            break-inside: avoid;
+            margin-bottom: 8px;
+        }
+
+        .industry {
+            color: var(--muted);
+        }
+
+        .work {
+            margin: 4px 0 0 -20px;
+            padding-left: 20px;
+        }
+
+        .work li {
+            margin-bottom: 3px;
+        }
+
+        .skill-group {
+            margin-bottom: 5px;
+        }
+
+        .skill-title {
+            font-weight: bold;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px 5px;
+            margin-top: 2px;
+        }
+
+        .skill {
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            padding: 2px 4px;
+        }
+
+        .certification {
+            border-bottom: .5px dashed #999;
+            padding: 3px 0;
+        }
+
+        .certification:last-child {
+            border-bottom: 0;
+        }
+
+        @media print {
+            body {
+                max-width: none;
+                padding: 0;
+            }
+
+            .overview,
+            html[data-layout="1"] .section {
+                break-inside: auto;
+                page-break-inside: auto;
+            }
+
+            html[data-layout="1"] .content {
+                display: block;
+            }
+
+            .toolbar {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 12px;
+            }
+
+            .header,
+            html[data-layout="2"] .content {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                display: block;
+            }
+
+            .contact {
+                margin-top: 8px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="toolbar" aria-label="Resume layout controls">
+        <button type="button" data-layout="1">1 column</button>
+        <button type="button" data-layout="2">2 columns</button>
+        <button type="button" onclick="window.print()">Print / PDF</button>
+    </nav>
+
+    <header class="header">
+        <div class="identity">
+            <h1>Adarsh Kumar</h1>
+            <h3>Lead Cloud Solution Architect (Cloud-Native Platforms &amp; Distributed Systems)</h3>
+        </div>
+        <div class="contact">
+            <div>+91-8500850627</div>
+            <div><a href="mailto:nextgen.adarsh@outlook.com">nextgen.adarsh@outlook.com</a></div>
+            <div><a href="https://www.linkedin.com/in/nextgenadarsh">linkedin.com/in/nextgenadarsh</a></div>
+            <div><a href="https://www.github.com/nextgenadarsh">github.com/nextgenadarsh</a></div>
+            <div>Pune, India</div>
+        </div>
+    </header>
+
+    <section class="section overview">
+        <h4>PROFESSIONAL OVERVIEW</h4>
+        <p>Results-oriented Lead Cloud Solution Architect with 16+ years of experience designing and delivering scalable, cloud-native enterprise systems across banking, travel, and infrastructure domains. Specialist in C#/.NET 8, ASP.NET Core, Python, AWS, Azure, and Kubernetes, with expertise in solution architecture, event-driven microservices, DDD/CQRS, API architecture, cloud adoption, and infrastructure as code. Proven record of modernizing legacy platforms, improving observability and resiliency, optimizing infrastructure costs by 20%, and scaling systems for 2M+ users.</p>
+    </section>
+
+    <main class="content">
+        <div class="primary-column">
+            <section class="section experience-section">
+                <h4 class="section-title">PROFESSIONAL EXPERIENCE</h4>
+                <article class="experience">
+                    <h4>VP - Lead Cloud Solution Architect | JPMorgan India Services (Feb 2022 to Present)</h4>
+                    <div class="industry">Industry: Loyalty &amp; Engagement (Banking)</div>
+                    <ul class="work">
+                        <li>Designed high-throughput, event-driven microservices on AWS and Kubernetes for ~2M card customers using Apache Kafka, circuit breakers, and rate-limiting patterns to maintain 99.99% system availability.</li>
+                        <li>Implemented end-to-end observability using Prometheus, Grafana, and OpenTelemetry across core microservices, establishing proactive auto-scaling policies that cut cloud costs by 20%.</li>
+                        <li>Built an automated platform migration framework to convert legacy .NET Framework monoliths into containerized .NET 8 microservices, cutting conversion effort by 95% and saving 500+ person-days of engineering work.</li>
+                        <li>Designed a migration gap-analysis solution to identify compatibility and quality risks when moving workloads from legacy platforms to modern microservices, improving migration reliability and reducing rework.</li>
+                        <li>Designed a reliable promotion framework for promotions and configurations, reducing release friction and supporting safer, more repeatable deployments.</li>
+                        <li>Drove SRE-focused architecture improvements across AWS and Kubernetes environments, strengthening security posture, end-to-end observability, operational resiliency, and cost efficiency.</li>
+                        <li>Led GitHub Copilot adoption across 25+ engineers; standardized AI-assisted code generation, unit test creation, and spec drafting to boost team velocity by 30%.</li>
+                        <li>Integrated Python and LangGraph workflows into the CI/CD pipeline to automate code reviews, dependency checks, and threat modeling audits.</li>
+                    </ul>
+                </article>
+                <article class="experience">
+                    <h4>Associate - Architect | JPMorgan India Services (July 2016 to Jan 2022)</h4>
+                    <div class="industry">Industry: Infrastructure Management (Finance)</div>
+                    <ul class="work">
+                        <li>Designed a fault-tolerant, self-service VM orchestration platform using distributed caching (Redis) and REST APIs for 317,000+ internal users, eliminating single points of failure and reducing operational overhead.</li>
+                        <li>Implemented enterprise asset management microservices integrating with cyber-security compliance systems, reducing application provisioning time.</li>
+                        <li>Led cybersecurity and compliance initiatives, mentoring developers through secure design and resolving complex application-security challenges.</li>
+                        <li>Defined MVP scope and product roadmaps with Product Owners and stakeholders, enabling phased delivery aligned with business priorities and technical feasibility.</li>
+                        <li>Conducted hub-level training on cybersecurity, system design, and coding best practices, sharing architecture and engineering practices across teams.</li>
+                    </ul>
+                </article>
+                <article class="experience">
+                    <h4>Senior Software Engineer | NISC Export Services (Aug 2014 to June 2016)</h4>
+                    <div class="industry">Industry: E Publishing</div>
+                    <ul class="work"><li>Architected a high-performance ReactJS web application with a micro-frontend design, enabling reusable plug-and-play UI components, driving developer efficiency, and designed an alert system to boost customer engagement and revenue.</li></ul>
+                </article>
+                <article class="experience">
+                    <h4>Software Developer | Tavisca Solutions (Mar 2013 to Aug 2014)</h4>
+                    <div class="industry">Industry: Travel</div>
+                    <ul class="work"><li>Developed high-performance systems, including a multi-threaded hotel content downloader (10x faster), a payment module with seamless gateway integration, and a re-engineered user profile system for 50K+ users using caching strategies to improve scalability and user experience.</li></ul>
+                </article>
+                <article class="experience">
+                    <h4>Software Engineer | Harbinger Systems (Jan 2010 to Mar 2013)</h4>
+                    <div class="industry">Industry: Human Capital Management - HCM</div>
+                    <ul class="work">
+                        <li>Developed a dynamic UI framework using XSLT for configurable HTML generation, improving flexibility and maintainability.</li>
+                        <li>Re-designed the user-group-role assignment process, reducing processing runtime by 66% (12h to 4h).</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="section certifications-section">
+                <h4 class="section-title">CERTIFICATIONS &amp; HONORS</h4>
+                <div class="certification"><span class="skill-title">Cloud &amp; Kubernetes:</span> AWS SME | AWS Certified Solutions Architect | AWS Certified Data Engineer | AWS Certified Developer | Microsoft Certified Azure Fundamentals | Certified Kubernetes Application Developer - CKAD</div>
+                <div class="certification"><span class="skill-title">Security:</span> JPMorgan Certified Threat Modeling Application Security Champion</div>
+                <div class="certification"><span class="skill-title">Recognition:</span> Certificate of Excellence by JPMorgan | Certificate of Appreciation for Peer-to-Peer Learning | Subject Matter Expert for Internal Trainings | Excellence in Learning and Application</div>
+            </section>
+        </div>
+
+        <aside class="secondary-column">
+            <section class="section expertise-section">
+                <h4 class="section-title">TECHNICAL EXPERTISE</h4>
+                <div class="skill-group"><div class="skill-title">Languages &amp; Core</div><div class="skill-list"><span class="skill">C#</span><span class="skill">.NET 8</span><span class="skill">ASP.NET Core</span><span class="skill">EF Core</span><span class="skill">Python</span><span class="skill">TypeScript</span><span class="skill">SQL</span><span class="skill">Java</span></div></div>
+                <div class="skill-group"><div class="skill-title">Distributed Systems &amp; Resilience</div><div class="skill-list"><span class="skill">Microservices</span><span class="skill">Apache Kafka</span><span class="skill">RabbitMQ</span><span class="skill">gRPC</span><span class="skill">REST APIs</span><span class="skill">DDD/CQRS</span><span class="skill">Circuit Breaker</span><span class="skill">High Availability</span></div></div>
+                <div class="skill-group"><div class="skill-title">Cloud Architecture, Adoption &amp; DevOps</div><div class="skill-list"><span class="skill">AWS</span><span class="skill">Azure</span><span class="skill">Cloud Adoption &amp; Migration</span><span class="skill">Cloud Governance</span><span class="skill">AKS</span><span class="skill">Azure Functions</span><span class="skill">Service Bus</span><span class="skill">Kubernetes</span><span class="skill">Terraform/IaC</span><span class="skill">GitHub Actions</span><span class="skill">Azure DevOps</span><span class="skill">Docker</span><span class="skill">FinOps</span></div></div>
+                <div class="skill-group"><div class="skill-title">API, Security &amp; Engineering Practices</div><div class="skill-list"><span class="skill">RESTful API Design</span><span class="skill">Headless APIs</span><span class="skill">Serverless</span><span class="skill">Application Security</span><span class="skill">Agile</span><span class="skill">DDD/CQRS</span><span class="skill">Secure Coding</span></div></div>
+                <div class="skill-group"><div class="skill-title">Observability &amp; Security</div><div class="skill-list"><span class="skill">OpenTelemetry</span><span class="skill">Prometheus</span><span class="skill">Grafana</span><span class="skill">Threat Modeling (AppSec)</span></div></div>
+                <div class="skill-group"><div class="skill-title">AI Tooling &amp; Automation</div><div class="skill-list"><span class="skill">GitHub Copilot</span><span class="skill">LangGraph</span><span class="skill">Semantic Kernel</span><span class="skill">LLM APIs</span><span class="skill">Prompt Engineering</span></div></div>
+                <div class="skill-group"><div class="skill-title">Data &amp; Storage</div><div class="skill-list"><span class="skill">S3</span><span class="skill">SQL Server</span><span class="skill">Cosmos DB</span><span class="skill">Redis Caching</span><span class="skill">PostgreSQL</span></div></div>
+                <div class="skill-group"><div class="skill-title">Frontend &amp; UI</div><div class="skill-list"><span class="skill">ReactJS</span><span class="skill">Angular</span><span class="skill">Saga</span><span class="skill">State Management</span><span class="skill">Micro-Frontends</span></div></div>
+            </section>
+
+            <section class="section education-section">
+                <h4 class="section-title">EDUCATION</h4>
+                <div class="experience"><span class="skill-title">Master of Computer Application (MCA)</span><br>Sinhgad Institute of Management (SIOM), University of Pune</div>
+                <div class="experience"><span class="skill-title">Bachelor of Science (Honours) in Computer Science</span><br>B. R. A. Bihar University</div>
+            </section>
+        </aside>
+    </main>
+
+    <script>
+        const documentRoot = document.documentElement;
+        const layoutButtons = document.querySelectorAll('[data-layout]');
+        const requestedLayout = new URLSearchParams(window.location.search).get('layout');
+        const initialLayout = requestedLayout === '1' ? '1' : '2';
+
+        function setLayout(layout) {
+            documentRoot.dataset.layout = layout;
+            layoutButtons.forEach((button) => {
+                button.setAttribute('aria-pressed', button.dataset.layout === layout);
+            });
+            const url = new URL(window.location.href);
+            url.searchParams.set('layout', layout);
+            window.history.replaceState({}, '', url);
+        }
+
+        layoutButtons.forEach((button) => {
+            button.addEventListener('click', () => setLayout(button.dataset.layout));
+        });
+
+        setLayout(initialLayout);
+    </script>
+</body>
+
+</html>
