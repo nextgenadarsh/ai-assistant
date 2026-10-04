@@ -218,3 +218,5 @@ __marimo__/
 .streamlit/secrets.toml
 
 .DS_Store
+# .github/agent-support/financial-planner/financial-profile.local.md
+

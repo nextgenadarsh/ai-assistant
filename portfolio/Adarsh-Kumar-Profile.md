@@ -4,9 +4,12 @@ Adarsh Kumar
 
 ## Work History
 
-### VP - Lead Cloud Solution Architect | JPMorgan India Services
-- Duration: Feb 2022 to Present
-- Industry: Loyalty & Engagement (Banking)
+### Vice President of Software Engineering / Lead Software Engineer / Lead Architect
+- Grade: 603
+- Company: JPMorgan India Services
+- Duration: Feb 2025 to Present
+- Location: Pne, India
+- Industry: Loyalty & Engagement (Card Finance)
 - Role Summary:
   - Lead cloud solution architect responsible for platform modernization, microservices architecture, cloud adoption, and operational reliability for a large-scale banking loyalty platform.
   - Drove modernization from legacy monoliths to cloud-native distributed services on AWS and Kubernetes while improving availability, security, and cost efficiency.
@@ -35,9 +38,12 @@ Adarsh Kumar
   - Guided modernization strategy and migration planning.
   - Helped standardize engineering quality, observability, and secure cloud practices.
 
-### Associate - Architect | JPMorgan India Services
-- Duration: July 2016 to Jan 2022
-- Industry: Infrastructure Management (Finance)
+### Associate of Software Engineering / Lead Software Engineer / Architect
+- Grade: 602
+- Company: JPMorgan India Services
+- Duration: Feb 2022 to Jan 2025
+- Location: Pune, India
+- Industry: Loyalty & Engagement (Card Finance)
 - Role Summary:
   - Architect and engineering lead focused on internal infrastructure platforms, secure service design, and self-service provisioning in a large financial environment.
 - Business Context:
@@ -60,52 +66,82 @@ Adarsh Kumar
   - Influenced secure platform design and team capability building.
   - Worked closely with engineering, security, and product stakeholders.
 
-### Senior Software Engineer | NISC Export Services
+### Associate of Software Engineering / Lead Software Engineer / Architect
+- Grade: 602
+- Company: JPMorgan India Services
+- Duration: Feb 2022 to Jan 2021
+- Location: Hyderabad, India
+- Industry: Global Finance Technology Infrastructure
+
+### Associate of Software Engineering / Lead Software Engineer / Architect
+- Grade: 602
+- Company: JPMorgan India Services
+- Duration: Feb 2022 to Jan 2025
+- Location: Hyderabad, India
+- Industry: Global Finance Technology Infrastructure
+
+### Senior Software Engineer
+- Company: NISC Export Services
 - Duration: Aug 2014 to June 2016
+- Location: Hyderabad, India
 - Industry: E Publishing
 - Role Summary:
-  - Senior engineer working on reusable UI architecture and customer-facing engagement features.
+  - Senior engineer working on E publishing portal backend with reusable UI architecture and customer-facing engagement features.
 - Business Context:
+  - Product needed multi tenant portal to support the electronic content publishing and engaging the readers.
   - Product needed a modular front-end foundation and better user engagement flows to support growth and maintainability.
 - Key Initiatives and Responsibilities:
+  - Design the backend using ASP.Net and RESTful APIs to support multiple consumer tenants.
   - Built a high-performance ReactJS application using a micro-frontend approach.
   - Designed reusable UI components and modular front-end architecture to improve development efficiency.
   - Created an alerting and engagement system to improve customer interaction and business responsiveness.
+  - Enable the users to search the articles based on multiple criterias
+  - Create alerts for particular search terms for future updates. Email results to self or others.
+  - Limit results to full text or peer reviewed along with sorting by date or relevance.
+  - Retrieve full text results in HTML and/or PDF formats.
 - Technical Stack:
-  - ReactJS, JavaScript, micro-frontends, front-end architecture, user engagement components.
+  - C#, ASP.Net, ADO.Net, Entity Framework, ReactJS, JavaScript, micro-frontends, front-end architecture, user engagement components.
 - Impact / Outcomes:
   - Improved developer productivity and maintainability.
   - Increased customer engagement and business responsiveness.
 
-### Software Developer | Tavisca Solutions
-- Duration: Mar 2013 to Aug 2014
+### Software Developer
+- Company: Tavisca Solutions
+- Duration: Apr 2013 to Aug 2014
+- Location: Pune, India
 - Industry: Travel
 - Role Summary:
-  - Developer working on performance-critical travel and integration systems.
+  - Developer working on multi tenant Travel portal development and customization enabling the consumers to have branded Travel portals which are performance-critical. Integration of the external payment gateway. Use caching layer to support the bootcamp which registers thousands of users during event. 
 - Business Context:
-  - Platform needed speedy content processing, reliable payment flows, and scalable user profile services.
+  - Platform needed the customized travel portal where users can book the travel products like Air, Car, Hotel etc using customized branded portal. The portal should support the payment using the payment gateway. It should also track payment status like success/failures to compensate the transactions.
 - Key Initiatives and Responsibilities:
-  - Built a multi-threaded hotel content downloader to improve throughput significantly.
-  - Developed a payment module with gateway integration.
+  - Built a multi-threaded hotel content downloader to improve throughput from 11 hrs to 3.5 hrs.
+  - Developed a payment module with gateway integration and status tracking with compensation.
   - Re-engineered the user profile system for 50K+ users with caching strategies to improve scalability and response times.
+  - Facilitates the registered user to get the best deals by comparing the prices from multiple vendors
+  - Based on generic widgets which speeds up the development of the portal
+  - Uses the generic configurable application template under the hood to support multiple clients
+
 - Technical Stack:
-  - Multi-threading, caching, payments, integration modules, scalable backend systems.
+  - C#, .Net 4.x, Entity Framework, Backbone, Handlebars.js, WCF, Multi-threading, Caching, Payments Integration Modules, Scalable Backend Systems.
 - Impact / Outcomes:
   - Improved speed, scalability, and user experience.
   - Simplified integration and improved reliability for customer-facing flows.
 
-### Software Engineer | Harbinger Systems
+### Software Engineer
+- Company: Harbinger Systems
 - Duration: Jan 2010 to Mar 2013
+- Location: Pune, India
 - Industry: Human Capital Management - HCM
 - Role Summary:
-  - Engineer focused on UI development and workflow optimization in an enterprise HCM product.
+  - Engineer focused on developing multi tenant HR portal development and workflow optimization in an enterprise HCM product using dynamic UI generation.
 - Business Context:
-  - Product required flexible UI generation and efficient role-based assignment processes at enterprise scale.
+  - Product required flexible dynamic UI generation and efficient role-based assignment processes at enterprise scale to enable the consumers to view/edit the page based on their role.
 - Key Initiatives and Responsibilities:
   - Developed a dynamic UI framework based on XSLT for configurable HTML generation.
   - Redesigned the user-group-role assignment process to reduce processing time drastically.
 - Technical Stack:
-  - XSLT, HTML generation, enterprise workflow automation, role-based access logic.
+  - C#, .Net 4.x, ADO.Net, XML, XSLT, HTML Generation, ExtJs, enterprise workflow automation, role-based access logic.
 - Impact / Outcomes:
   - Improved maintainability and flexibility of the UI layer.
   - Reduced role assignment processing time from 12 hours to 4 hours.
@@ -264,15 +300,20 @@ Adarsh Kumar
 ## Certifications and Honors
 
 ### Cloud & Kubernetes
-- AWS SME
+- AWS Subject Matter Expert (SME)
 - AWS Certified Solutions Architect
 - AWS Certified Data Engineer
 - AWS Certified Developer
 - Microsoft Certified Azure Fundamentals
 - Certified Kubernetes Application Developer (CKAD)
 
+### Agile & Delivery
+- KMP I: Kanban System Design (KSD)
+- KMP II: Kanban Systems Improvement (KSI)
+- SAFe 4 Certified Scrum Master
+
 ### Security
-- JPMorgan Certified Threat Modeling Application Security Champion
+- Application Security Champion (ASC) - Thread Modelling Assessment
 
 ### Recognition
 - Certificate of Excellence by JPMorgan
@@ -348,13 +389,55 @@ Adarsh Kumar
 
 ### Frontend & UI
 - ReactJS
+- React 18/19
+- TypeScript
+- Next.js
+- Redux Toolkit
+- Redux Saga
+- TanStack Query
 - Angular
 - Saga
 - State Management
 - Micro-Frontends
+- Tailwind CSS
+- Accessibility (A11y)
+- Design Systems
+
+### Backend & Architecture
+- ASP.NET Core
+- Minimal APIs
+- EF Core
+- gRPC
+- Identity
+- OAuth 2.0
+- OIDC
+- JWT
+- DDD
+- Clean Architecture
+- Event-Driven Architecture
+- CQRS
+- API Versioning
+- Rate Limiting
+- Caching
+- Distributed Tracing
+
+### Quality, Security & Platform Engineering
+- OWASP Top 10
+- Secure Coding
+- RBAC/ABAC
+- SonarQube
+- Jest
+- React Testing Library
+- Playwright
+- Cypress
+- Terraform
+- Bicep
+- Helm
+- CI/CD Pipelines
+- OpenTelemetry
+- SRE / Reliability Engineering
 
 ## Notes for Resume Matching
 - Core strengths: cloud-native architecture, distributed systems, microservices modernization, observability, Kubernetes, AWS/Azure, and enterprise platform migration.
 - Strong domain fit: banking, finance, infrastructure, e-commerce, travel, and platform engineering.
 - Relevant future learning areas for role alignment: GenAI/AI architecture, system design depth, platform engineering, and advanced cloud security/governance.
-
